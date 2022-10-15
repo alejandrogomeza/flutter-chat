@@ -20,7 +20,7 @@ class BotonAzul extends StatelessWidget {
       onPressed: onPressed,
 
       child: Center(
-        child: Text(text, style: TextStyle(color: Colors.white, fontSize: 16),
+        child: Text(text, style: const TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );
