@@ -18,7 +18,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   final _textController = TextEditingController();
   final _focusNode = FocusNode();
 
-  List<ChatMessage> _messages = [];
+  final List<ChatMessage> _messages = [];
 
   bool _estaEscribiendo = false;
 
