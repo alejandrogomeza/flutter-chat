@@ -1,9 +1,9 @@
-import 'package:chat/helpers/mostrar_alerta.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:chat/services/auth_service.dart';
+import 'package:chat/services/services.dart';
 import 'package:chat/widgets/widgets.dart';
+import 'package:chat/helpers/mostrar_alerta.dart';
 
 class RegisterPage extends StatelessWidget {
    
@@ -56,6 +56,8 @@ class __FormState extends State<_Form> {
   Widget build(BuildContext context) {
 
     final authService = Provider.of<AuthService>(context);
+    final socketService = Provider.of<SocketService>(context);
+
 
     return Container(
       margin: const EdgeInsets.only(left: 0, right: 0, top: 40, bottom: 0),
@@ -99,7 +101,7 @@ class __FormState extends State<_Form> {
               );
 
               if (registroOk == true) {
-                // TODO: CONECTAR AL SOCKET SERVER
+                socketService.connect();
                 Navigator.pushReplacementNamed(context, 'usuarios');
               } else {
                 // Mostrar alerta
